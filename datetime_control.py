@@ -15,6 +15,7 @@ def months(dt,months):#这里的months 参数传入的是正数表示往后 ，�
     return str(dt.replace(year=year, month=month, day=day)).replace('-','')
 time_temp = '20150419'
 dt=datetime.date(int(time_temp[0:4]), int(time_temp[4:6]), int(time_temp[6:8]))
+print u'给定的日期是',time_temp
 print '1个月前的今天是',months(dt,-1)
 print '6个月前的今天是',months(dt,-6)
 print '3个月后的今天是',months(dt,3)
