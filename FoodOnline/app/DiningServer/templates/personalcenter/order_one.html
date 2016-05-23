@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script  src="/static/js/jquery.min.js"></script>
+<script src="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<!--<link rel="stylesheet"  href="/static/js/jquery.mobile.tabs.css"/>
+<script  src="/static/js/jquery.mobile.tabs.js"></script>-->
+</head>
+
+<body>
+<div data-role="page">
+  <div data-role="header">
+    	 <a href="javascript:void(0)" onclick="window.history.go(-1);" data-role="button"  data-icon="back">返回</a> 
+       
+        
+    	<h1>详情</h1>
+    	
+  	 
+  </div>
+  <!-- /header -->
+  
+  <div data-role="content" style=" padding-top:0px; padding-left:0px; ">
+    
+<div data-role="tabs" id="tabs" style="padding-top:0px; padding-left:0px; " >
+  <div data-role="navbar">
+    <ul>
+      <li><a href="#one" data-ajax="false">图文详情</a></li>
+      <li><a href="#two" data-ajax="false">客户评论</a></li>
+      <li><a href="#three" data-ajax="false">餐厅信息</a></li>
+    </ul>
+  </div>
+  <div id="one" class="ui-body-d ui-content" style="width:100%;">
+    <h1>酱香虾 ￥15</h1>
+    <p><img src="/static/index/food/1.jpg" width="50%;" /></p>
+    <p>美味啊十大是打死打伤打死打伤大声的电视大赛大神的</p>
+    <p>
+<label for="number-pattern">请选择数量：</label>
+<input name="number" pattern="[0-9]*" id="number-pattern" value="0" type="number"></p>
+       <br /> 
+    
+		 <div  style="text-align:center;"  >
+    		<a href="#"   data-role="button" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-delete ui-btn-inline">取消</a>
+    		<a href="#" data-role="button" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-check ui-btn-inline">确认</a>
+    	 </div>
+
+  </div>
+  <div id="two">
+   好评
+  </div>
+    <div id="three">
+   1懂二楼
+  </div>
+</div>
+
+
+
+ 
+ 
+    
+  </div>
+  <!-- /content -->
+  
+  <div data-role="footer" data-position="fixed">
+    <h4>lovesword@2016</h4>
+  </div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+
+
+
+</body>
+</html>

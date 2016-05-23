@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>register</title>
+</head>
+
+<body>
+ <form  method="post" action="/food_online/auth/register/" enctype='multipart/form-data'>
+      {% csrf_token %}
+      <div data-role="fieldcontain" style="border-bottom-style:hidden;">
+        <label for="username"> 用戶名： </label>
+        <input name="username" type="text" id="username" value="lovesword"/>
+      </div>
+      <div data-role="fieldcontain" style="border-bottom-style:hidden;">
+        <label for="password"> 密码： </label>
+        <input name="password" type="password" id="password" value="cat"/>
+      </div>
+      
+      <input name="submit" type="submit" value="注册" />
+    </form>
+    <p align="center"> 
+     {% if messages %}
+    <ul>
+      {% for message in messages %}
+       
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+       
+      {% endfor %}
+    </ul>
+    {% endif %} 
+    </p>
+</body>
+</html>

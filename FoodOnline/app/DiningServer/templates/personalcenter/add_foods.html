@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="/static/css/mui.min.css">
+	</head>
+
+	<body>
+    <header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">添加菜品</h1>
+		</header>
+
+		<div class="mui-content">
+			<form id='add-food-form' class="mui-input-group" action="/dining/add_foods/" method="post">
+            {% csrf_token %}
+				<div class="mui-input-row">
+					<label>菜品名称</label>
+					<input id='name' type="text" class="mui-input-clear mui-input" placeholder="请输入菜品名称" name="name" value="小龙虾1">
+				</div>
+                <div class="mui-input-row">
+					<label>菜品图片</label>
+					<input id='photo' type="text" class="mui-input-clear mui-input" placeholder="请输入菜品名称" name="photo" value="/static/index/food/1.jpg">
+				</div>
+				<!--<div class="mui-input-row">-->
+                <div class="mui-input-row">
+
+					<label>简介</label>
+					<textarea id="textarea" rows="5" placeholder="请简单介绍特色" name="info"></textarea>
+
+				</div>
+                
+
+			</form>
+		</div>
+        
+        
+        <div class="mui-content-padded">
+				<button id='add' class="mui-btn mui-btn-block mui-btn-primary" type="submit">添加</button>
+     <p align="center"> 
+     {% if messages %}
+    <ul>
+      {% for message in messages %}        
+      <li class="{{ message.tags|default:"" }}">{{ message }}</li>       
+      {% endfor %}
+    </ul>
+    {% endif %} 
+    </p> 	
+				 
+			</div>
+		<script src="/static/js/mui.min.js"></script>
+			<script>
+		var btn = document.getElementById("add");
+//监听点击事件
+btn.addEventListener("tap",function () {
+  document.getElementById("add-food-form").submit();
+});
+</script>	 
+	</body>
+
+</html>

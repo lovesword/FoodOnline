@@ -1,0 +1,85 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script  src="/static/js/jquery.min.js"></script>
+<script src="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+<div data-role="page">
+  <div data-role="header">
+    <a href="/stu/" data-role="button" data-icon="home">首页</a>
+    	<h1>用户注册</h1>
+    	<a href="/stu/auth/login/" data-role="button" class="ui-btn-right" data-icon="comment">去登录？</a>
+  	 
+  </div>
+  <!-- /header -->
+  
+  <div data-role="content">
+    <form  method="post" action="/stu/auth/register/" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <div data-role="fieldcontain" style="border-bottom-style:hidden;">
+      <label for="username"> 手机号： </label>
+      <input name="username" type="text" id="username"/>
+    </div>
+      
+    <div data-role="fieldcontain" style="border-bottom-style:hidden;">
+      <label for="code_group"> 验证码： </label>
+      <fieldset class="ui-grid-a" id="code_group">
+  <div class="ui-block-a"><input name="code" type="text" id="code" value="123456"/></div>
+  <div class="ui-block-b">
+ <!--  <input data-mini="true" name="code_send" type="button" value="获取验证码" /> -->
+ <a href="#popupBasic"   data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini" data-transition="pop">获取验证码</a>
+<div data-role="popup" id="popupBasic">
+<p>发验证码？谁出短信费？</p>
+</div>  
+   
+   
+  </div>	   
+</fieldset>
+      
+      
+      
+      
+    </div>
+    
+          
+      <div data-role="fieldcontain" style="border-bottom-style:hidden;">
+      <label for="password"> 输入密码： </label>
+      <input name="password" type="password" id="password"/>
+      </div>
+       <div data-role="fieldcontain" style="border-bottom-style:hidden;">
+      <label for="password1"> 确认密码： </label>
+      <input name="password1" type="password" id="password1"/>
+      </div>     
+      
+      
+      <input name="submit" type="submit" value="注册" data-theme="b"/>
+
+    </form>
+    
+    <p align="center"> 
+     {% if messages %}
+    <ul>
+      {% for message in messages %}        
+      <li class="{{ message.tags|default:"" }}">{{ message }}</li>       
+      {% endfor %}
+    </ul>
+    {% endif %} 
+    </p>    
+    
+  </div>
+  <!-- /content -->
+  
+  <div data-role="footer" data-position="fixed">
+    <h4>lovesword@2016</h4>
+  </div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+
+</body>
+</html>

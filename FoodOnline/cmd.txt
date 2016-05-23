@@ -1,0 +1,29 @@
+python manage.py sqlmigrate food_online 0002
+
+python manage.py migrate
+
+
+python manage.py inspectdb > db_model.py
+
+
+    messages.info(request, 'info all right.')
+    messages.error(request, 'info error.')
+
+
+            if user: #判断这个是否有效值
+                request.session['username'] = name
+                return HttpResponseRedirect("/")
+            else: #无效
+                return HttpResponseRedirect("/login.html",context_instance=RequestContext(request))
+    else:
+        fr = loginForm()
+    return render_to_response('login.html',locals(),context_instance=RequestContext(request))
+
+
+
+
+学生在线点餐（测试权限）
+AppID：a8be57ada37d406c
+AppSecret：f3bee8d5706b80683edb6556735ae272
+
+token e1ebf174d6ce3432bae3d3d969f5800a2fafbede

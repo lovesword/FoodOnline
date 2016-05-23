@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script  src="/static/js/jquery.min.js"></script>
+<script src="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+<div data-role="page">
+  <div data-role="header">
+    	<!--<a href="#" data-role="button"  data-icon="user">{{username}}</a>-->
+<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-user ui-btn-icon-left ui-btn-a">{{username}}</a>
+<div data-role="popup" id="popupMenu" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-role="list-divider">个人中心</li>
+            <li><a href="#">个人中心首页</a></li>
+            <li><a href="#">二维码</a></li>
+            <li><a href="#">修改密码</a></li>
+            <li><a href="#">退出</a></li>
+        </ul>
+</div>        
+        
+    	<h1>首页</h1>
+    	<a href="/seacher" data-role="button" class="ui-btn-right" data-icon="search">搜索</a>
+  	 
+  </div>
+  <!-- /header -->
+  
+  <div data-role="content">
+    <form  method="post" action="/auth/login" enctype='multipart/form-data'>
+     dddddd
+      <div class="row cl">
+        <div class="col-9 col-offset-3"> 
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          
+          {% for message in messages %}
+          <p style='color:red'>{{ message|safe }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+           </div>
+      </div>
+    </form>
+  </div>
+  <!-- /content -->
+  
+  <div data-role="footer" data-position="fixed">
+    <h4>lovesword@2016</h4>
+  </div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+
+</body>
+</html>

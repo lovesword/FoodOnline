@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="/static/css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="/static/css/app.css"/>
+        <script src="/static/dining/js/dining.js"></script>
+        <script src="/static/js/jquery.min.js"></script>
+	</head>
+
+	<body>
+   <div class="mui-content">
+   		<a href="/dining/add_foods/">
+		 <button type="button" class="mui-btn mui-btn-warning mui-btn-block mui-icon mui-icon-plus mui-center" style="margin-bottom:0px;">添加新菜</button> </a>
+	 
+		 
+            
+			<ul class="mui-table-view mui-table-view-chevron">
+            {% for food in food_list%}
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="{{food.photo}}">
+						<div class="mui-media-body">
+							{{food.name}}
+							<p class='mui-ellipsis'>{{food.info}}</p>
+						</div>
+					</a>
+				</li>
+			{%endfor%}
+			</ul>
+		<script src="/static/js/mui.min.js"></script>
+		  
+	</body>
+
+</html>

@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="/static/css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="/static/css/app.css" />
+		<style>
+			h5 {
+				margin: 5px 7px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded" style="margin: 5px;">
+				
+			
+				<form class="mui-input-group" action="/dining/register/" method="post" id="register-form">
+                {% csrf_token %}
+					<div class="mui-input-row">
+						<label>手机号</label>
+						<input type="text" class="mui-input-clear" placeholder="手机号" id="username" name="username">
+					</div>
+					<div class="mui-input-row">
+					  <label>验证码</label>
+						<input type="text" class="mui-input-clear" placeholder="请输入6位数字验证码" value="123456">
+                         
+					</div>
+					<div class="mui-input-row">
+						<label>输入密码</label>
+						<input type="password" class="mui-input-password" placeholder="输入密码" id="password" name="password">
+					</div>
+					<div class="mui-input-row">
+						<label>确认密码</label>
+						<input type="password" class="mui-input-password" placeholder="确认密码">
+					</div>
+
+
+					 
+				</form>
+   
+			</div>
+            
+ <div class="mui-content-padded">
+                        <button  id="register" class="mui-btn mui-btn-block mui-btn-primary" type="submit" style=" height:47px;">注册</button>
+              </div>          
+    <p align="center"> 
+     {% if messages %}
+    <ul>
+      {% for message in messages %}        
+      <li class="{{ message.tags|default:"" }}">{{ message }}</li>       
+      {% endfor %}
+    </ul>
+    {% endif %} 
+    </p> 	              
+						
+            
+		</div>
+		<script src="/static/js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+var btn = document.getElementById("register");
+//监听点击事件
+btn.addEventListener("tap",function () {
+  document.getElementById("register-form").submit();
+});
+		</script>
+	</body>
+
+</html>

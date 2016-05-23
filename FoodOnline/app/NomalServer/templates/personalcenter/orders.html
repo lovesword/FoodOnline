@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script  src="/static/js/jquery.min.js"></script>
+<script src="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+<div data-role="page">
+  <div data-role="header">
+    	<!--<a href="#" data-role="button"  data-icon="user">{{username}}</a>-->
+<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-user ui-btn-icon-left ui-btn-a">{{user.username}}</a>
+<div data-role="popup" id="popupMenu" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-role="list-divider">个人中心</li>
+            <li><a href="#">个人中心首页</a></li>
+            <li><a href="#">二维码</a></li>
+            <li><a href="#">修改密码</a></li>
+            <li><a href="#">退出</a></li>
+        </ul>
+</div>        
+        
+    	<h1>我的订单</h1>
+    	<a href="/nomal/seacher" data-role="button" class="ui-btn-right" data-icon="search">搜索</a>
+  	 
+  </div>
+  <!-- /header -->
+  
+  <div data-role="content">
+<ul data-role="listview" >
+    <li> <a href="/nomal/personalCenter/order_one"><img src="/static/index/food/1.jpg" />
+        <h3>￥15</h3>
+        <p>酱香虾。。。。。</p></a>
+    </li>
+    <li><a href="/nomal/personalCenter/order_one">
+        <img src="/static/index/food/2.jpg" />
+        <h3>￥15</h3>
+        <p>红烧肉。。。。</p></a>
+    </li>
+    <li><a href="/nomal/personalCenter/order_one">
+        <img src="/static/index/food/3.jpg" />
+        <h3>￥18</h3>
+        <p>狮子头？。。。</p></a>
+    </li>
+    <li><a href="/nomal/personalCenter/order_one">
+        <img src="/static/index/food/4.jpg" />
+        <h3>￥16</h3>
+        <p>肥。。。。虾</p></a>
+    </li>
+    <li><a href="/nomal/personalCenter/order_one">
+        <img src="/static/index/food/10.jpg" />
+        <h3>￥17</h3>
+        <p>肉狗？。。。</p></a>
+    </li>
+    <li><a href="/nomal/personalCenter/order_one">
+        <img src="/static/index/food/8.jpg" />
+        <h3>￥17</h3>
+        <p>不知道？。。。</p></a>
+    </li>
+</ul>
+   
+ 
+   
+ 
+    </form>
+  </div>
+  <!-- /content -->
+  
+  <div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+                <ul>
+                    <li><a href="/nomal/"  data-icon="location" >为您精选</a></li>
+                    <li><a href="/nomal/personalCenter/orders"  data-icon="bullets" class="ui-btn-active">我的订单</a></li>
+                    <li><a href="/nomal/personalCenter/heart"  data-icon="heart">我的最爱</a></li>
+                </ul>
+            </div> <!--/navbar -->
+  </div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script  src="/static/js/jquery.min.js"></script>
+<script src="/static/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+<div data-role="page">
+  <div data-role="header"> <a href="/stu/" data-role="button" data-icon="home">首页</a>
+    <h1>用户登录</h1>
+    <a href="/stu/auth/register" data-role="button" class="ui-btn-right" data-icon="edit">注册</a> </div>
+  <!-- /header -->
+  
+  <div data-role="content">
+    <form  method="post" action="/food_online/auth/login/" enctype='multipart/form-data'>
+      {% csrf_token %}
+      <div data-role="fieldcontain" style="border-bottom-style:hidden;">
+        <label for="username"> 用戶名： </label>
+        <input name="username" type="text" id="username" value="love"/>
+      </div>
+      <div data-role="fieldcontain" style="border-bottom-style:hidden;">
+        <label for="password"> 密码： </label>
+        <input name="password" type="password" id="password" value="cat"/>
+      </div>
+      
+<!--      <fieldset data-role="controlgroup">
+        <label for="rember_me">记录登录状态</label>
+        <input name="rember_me" type="checkbox" id="rember_me" value="y" checked="checked"/>
+      </fieldset>-->
+      <input name="submit" type="submit" value="登录" />
+    </form>
+    <p align="center"> 
+     {% if messages %}
+    <ul>
+      {% for message in messages %}
+        
+      <li class="{{ message.tags|default:"" }}">{{ message }}</li>
+       
+      {% endfor %}
+    </ul>
+    {% endif %} 
+    </p>
+  </div>
+  <!-- /content -->
+  
+  <div data-role="footer" data-position="fixed">
+    <h4>lovesword@2016</h4>
+  </div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+
+<script type="text/javascript">
+　$(document).bind("mobileinit", function() {
+　　$.mobile.defaultPageTransition = "fade";
+　　$.mobile.defaultDialogTransition = "fade";
+　});
+</script>
+
+</body>
+</html>

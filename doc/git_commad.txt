@@ -1,0 +1,22 @@
+删除远程分支
+git push origin --delete django_web
+
+
+删除本地分支
+git branch -D django_web
+
+
+…or create a new repository on the command line
+echo "# mui" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/lovesword/mui.git
+git push -u origin master
+
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/lovesword/mui.git
+git push -u origin master
+

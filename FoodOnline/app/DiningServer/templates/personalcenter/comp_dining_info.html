@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="/static/css/mui.min.css">
+	</head>
+
+	<body>
+    <header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">完善餐厅信息</h1>
+		</header>
+
+		<div class="mui-content">
+			<form id='comp-dining-form' class="mui-input-group" action="/dining/comp_dining_info/" method="post">
+            {% csrf_token %}
+				<div class="mui-input-row">
+					<label>餐厅名称</label>
+					<input id='dining_name' type="text" class="mui-input-clear mui-input" placeholder="请输入餐厅名称" name="dining_name" value="金融港全派餐厅1">
+				</div>
+                <div class="mui-input-row">
+					<label>餐厅图片</label>
+					<input id='username' type="text" class="mui-input-clear mui-input" placeholder="请选择餐厅图片" name="photo" value="/static/index/2.jpg">
+				</div>
+				<!--<div class="mui-input-row">-->
+                <div class="mui-input-row">
+
+					<label>简介</label>
+					<textarea id="textarea" rows="5" placeholder="请简单介绍特色" name="dining_info">色香味俱全</textarea>
+
+				</div>
+				<div class="mui-input-row">
+					<label>餐厅地址</label>
+					<input id='address' type="text" class="mui-input-clear mui-input" placeholder="请输入餐厅名称" name="address" value="金融港全派餐厅1">
+				</div>                
+
+			</form>
+		</div>
+        
+        
+        <div class="mui-content-padded">
+				<button id='comp' class="mui-btn mui-btn-block mui-btn-primary" type="submit">提交</button>
+     <p align="center"> 
+     {% if messages %}
+    <ul>
+      {% for message in messages %}        
+      <li class="{{ message.tags|default:"" }}">{{ message }}</li>       
+      {% endfor %}
+    </ul>
+    {% endif %} 
+    </p> 	
+				 
+			</div>
+		<script src="/static/js/mui.min.js"></script>
+			<script>
+		var btn = document.getElementById("comp");
+//监听点击事件
+btn.addEventListener("tap",function () {
+  document.getElementById("comp-dining-form").submit();
+});
+</script>	 
+	</body>
+
+</html>
